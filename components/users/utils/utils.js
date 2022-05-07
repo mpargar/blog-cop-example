@@ -5,16 +5,15 @@ const utils = {
    * @param {string} password
    * @returns {string} encryoted password
    */
-  hashPassword: (password) => {
-    return bcrypt.hashSync(password, +process.env.BCRYPT_COST);
-  },
+  hashPassword: (password) =>
+    bcrypt.hashSync(password, +process.env.BCRYPT_COST),
   /**
    * @param {string} plainPassword
    * @param {string} encryptedPassword
    * @returns {boolean}
    */
   verifyPassword: (plainPassword, encryptedPassword) =>
-    bcrypt.compareSync(plainPassword, encryptedPassword),
+		bcrypt.compareSync(plainPassword, encryptedPassword),
 };
 
 module.exports = utils;

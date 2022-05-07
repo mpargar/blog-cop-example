@@ -26,7 +26,7 @@ const login = async ({ email, password }) => {
       id: result[0].id,
       email: result[0].email,
     },
-    "hola_mundo"
+    process.env.JWT_SECRET
   );
   response.status = 200;
   response.body = {

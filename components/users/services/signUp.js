@@ -18,6 +18,7 @@ const signUp = async (data) => {
       email: data.email,
     };
   } catch (error) {
+		console.log(error);
     response.status = 500;
     response.body = { error: error };
   }

@@ -5,7 +5,9 @@ const utils = {
    * @param {string} password
    * @returns {string} encryoted password
    */
-  hashPassword: (password) => bcrypt.hashSync(password, 10),
+  hashPassword: (password) => {
+    return bcrypt.hashSync(password, +process.env.BCRYPT_COST);
+  },
   /**
    * @param {string} plainPassword
    * @param {string} encryptedPassword
